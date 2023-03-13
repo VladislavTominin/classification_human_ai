@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 import csv
 from sklearn.metrics import classification_report
-
+from human_ai.code.evaluate import save_predictions
 
 # Read The data
 training_set = pd.read_json('./train_set.json')
@@ -17,11 +17,4 @@ clf.fit(X, training_set['label'])
 X_test = vectorizer.transform(test_set['text'])
 predictions = clf.predict(X_test)
 
-
-# Write predictions to a file
-with open("submission.csv", "w") as pred:
-    csv_out = csv.writer(pred)
-    csv_out.writerow(['id','label'])
-    for i, row in enumerate(predictions):
-        csv_out.writerow([i, row])
-        
+save_predictions(predictions)

@@ -6,10 +6,10 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import TrainingArguments, Trainer
 
 
-class RobertaHumanAI:
+class ClassificatorHumanAI:
 
-    def __init__(self, training_args):
-        self.model_name = "roberta-base-openai-detector"
+    def __init__(self, training_args, model_name):
+        self.model_name = model_name
         self.model = AutoModelForSequenceClassification.from_pretrained(self.model_name)
 
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
