@@ -1,0 +1,71 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  1%|          | 170/17000 [01:37<2:37:07,  1.79it/s]The following columns in the evaluation set don't have a corresponding argument in `RobertaForSequenceClassification.forward` and have been ignored: id, text. If id, text are not expected by `RobertaForSequenceClassification.forward`,  you can safely ignore this message.
+***** Running Evaluation *****
+  Num examples = 600
+  Batch size = 8
+
+
+  File "/homes/vladtom/classification_human_ai/scripts/run_train.py", line 16, in <module>
+    model.train(dataset)
+  File "/homes/vladtom/classification_human_ai/human_ai/code/model.py", line 42, in train
+    trainer.train()
+  File "/homes/vladtom/miniconda3/lib/python3.10/site-packages/transformers/trainer.py", line 1543, in train
+    return inner_training_loop(
+  File "/homes/vladtom/miniconda3/lib/python3.10/site-packages/transformers/trainer.py", line 1883, in _inner_training_loop
+    self._maybe_log_save_evaluate(tr_loss, model, trial, epoch, ignore_keys_for_eval)
+  File "/homes/vladtom/miniconda3/lib/python3.10/site-packages/transformers/trainer.py", line 2131, in _maybe_log_save_evaluate
+    metrics = self.evaluate(ignore_keys=ignore_keys_for_eval)
+  File "/homes/vladtom/miniconda3/lib/python3.10/site-packages/transformers/trainer.py", line 2827, in evaluate
+    output = eval_loop(
+  File "/homes/vladtom/miniconda3/lib/python3.10/site-packages/transformers/trainer.py", line 3116, in evaluation_loop
+    metrics = self.compute_metrics(EvalPrediction(predictions=all_preds, label_ids=all_labels))
+  File "/homes/vladtom/classification_human_ai/human_ai/code/model.py", line 31, in compute_metrics
+    return self.metric.compute(predictions=predictions, references=labels)
+NameError: name 'self' is not defined
